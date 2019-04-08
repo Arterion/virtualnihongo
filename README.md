@@ -1,2 +1,2 @@
-# virtualnihongo
+# Virtual Nihongo
 Virtual Nihongo Website
