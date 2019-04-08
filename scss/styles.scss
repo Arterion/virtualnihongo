@@ -15,6 +15,7 @@
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 main {
@@ -29,6 +30,12 @@ section {
   font-size: 3em;
   position: relative;
   overflow: hidden;
+
+  h3 {
+    max-width: 600px;
+    display: block;
+    margin: 0 auto;
+  }
 }
 
 .background-container {
@@ -74,11 +81,10 @@ section {
     text-shadow:
       0 0 5px $accent,
       0 0 20px darken($accent, 10%),
-      0 0 40px darken($accent, 20%),
-      0 0 80px darken($accent, 30%),
-      0 0 90px darken($accent, 40%),
-      0 0 100px darken($accent, 50%),
-      0 0 150px darken($accent, 60%);
+      0 0 30px darken($accent, 20%),
+      0 0 40px darken($accent, 30%),
+      0 0 50px darken($accent, 40%),
+      0 0 60px darken($accent, 50%);
       line-height: 2em;
       font-size: 2em;
       letter-spacing: 5px;
@@ -91,10 +97,9 @@ section {
       0 0 5px #fff,
       0 0 10px darken(#FFF, 30%),
       0 0 20px darken(#fff, 30%),
-      0 0 40px darken(#fff, 30%),
-      0 0 80px darken(#fff, 40%),
-      0 0 90px darken(#fff, 50%),
-      0 0 100px darken(#fff, 60%);
+      0 0 30px darken(#fff, 30%),
+      0 0 40px darken(#fff, 40%),
+      0 0 50px darken(#fff, 50%);
       line-height: 2.4em;
       br {
         display: none;
@@ -244,14 +249,15 @@ section {
 
       h2 {
         color: $accent;
+        font-size: 1em;
         &::after {
           content: "";
           position: relative;
           display: block;
-          width: 30px;
-          height: 3px;
+          width: $indicator-width;
+          height: $indicator-height;
           background: $accent;
-          margin-top: 5px;
+          margin-top: 10px;
           left: 1px;
         }
       }
@@ -351,10 +357,13 @@ section {
 #demo-video iframe {
   position: absolute;
   left: 50%;
+  width: 1000px;
+  height: 562px;
   pointer-events: none;
   margin-left: -500px;
   z-index: 4;
   top: 60px;
+  background-color: black;
 }
 
 
@@ -489,6 +498,7 @@ section .container .item {
   margin: auto;
   left: 20px;
   z-index: 999;
+  overflow: hidden;
 
 }
 .brand img {
@@ -514,6 +524,13 @@ section .container .item {
     }
   }
 
+[data-anchor]::before {
+  display: block;
+  content: " ";
+  height: 120px;
+  pointer-events: none;
+}
+
 
   .cta {
     margin: 0;
@@ -527,8 +544,12 @@ section .container .item {
     top: inherit;
     border-radius: 0;
     border: none;
-    background: $cta;;
+    background: $cta;
     z-index: 9999;
+
+    &:hover {
+      color: white;
+    }
 
       br {
         display: none;
@@ -608,6 +629,17 @@ section .container .item {
     top: 200px;
   }
 
+  #demo-video iframe {
+    position: absolute;
+    left: 50%;
+    width: 300px;
+    height: 169px;
+    pointer-events: none;
+    margin-left: -150px;
+    z-index: 4;
+    top: 200px;
+  }
+
 
   [data-aos="scale-up"] {
     transform: scale(1);
@@ -615,6 +647,14 @@ section .container .item {
     &.aos-animate {
     transform: scale(2);
     }
+  }
+
+  .cta .draw:hover {
+    color: white;
+  }
+
+  #container-footer {
+    margin-bottom: 180px;
   }
 
 }
@@ -628,11 +668,10 @@ section .container .item {
       text-shadow:
         0 0 5px $accent,
         0 0 20px darken($accent, 10%),
-        0 0 40px darken($accent, 20%),
-        0 0 80px darken($accent, 30%),
-        0 0 90px darken($accent, 40%),
-        0 0 100px darken($accent, 50%),
-        0 0 150px darken($accent, 60%);
+        0 0 30px darken($accent, 20%),
+        0 0 40px darken($accent, 30%),
+        0 0 50px darken($accent, 40%),
+        0 0 60px darken($accent, 50%);
     }
     h2 {
       font-size: 1em;
@@ -641,8 +680,8 @@ section .container .item {
         0 0 5px #fff,
         0 0 10px darken(#FFF, 30%),
         0 0 20px darken(#fff, 30%),
-        0 0 40px darken(#fff, 30%),
-        0 0 80px darken(#fff, 40%);
+        0 0 30px darken(#fff, 30%),
+        0 0 40px darken(#fff, 40%);
       br {
         display: block;
       }
