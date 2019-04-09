@@ -9,9 +9,11 @@
 
 [data-aos="fade-cta"] {
   opacity: 0;
+  visibility: hidden;
   transform: translateX(20px);
   transition-property: transform opacity;
   &.aos-animate {
+    visibility: visible;
     opacity: 1;
     transform: translateX(0);
   }
@@ -20,8 +22,10 @@
 [data-aos="fade-brand"] {
   opacity: 0;
   transform: translateX(-20px);
+  visibility: hidden;
   transition-property: transform opacity;
   &.aos-animate {
+    visibility: visible;
     opacity: 1;
     transform: translateX(0px);
   }
